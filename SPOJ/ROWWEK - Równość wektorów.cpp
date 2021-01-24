@@ -1,5 +1,5 @@
-// Task: T_PINTR - Punkty w trójkącie (SPOJ)
-// URL: https://pl.spoj.com/problems/T_PINTR/
+// Task: ROWWEK - Równość wektorów (SPOJ)
+// URL: https://pl.spoj.com/WSDOCPP/problems/ROWWEK/
 // Author: Marcin Wojdat
 // Date: 24.01.2021
 // Algorithms from: https://github.com/Rubix98/algorithms
@@ -207,3 +207,4 @@ int main() {
     if (v1.a == v2.a && v1.b == v2.b) printf("tak [%d;%d]\n", v1.a, v2.b);
     else printf("nie\n");
 }
+
