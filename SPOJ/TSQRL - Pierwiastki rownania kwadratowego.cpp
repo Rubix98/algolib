@@ -1,5 +1,5 @@
-// Task: DYZIO2 - Dyzio (SPOJ)
-// URL: https://pl.spoj.com/problems/DYZIO2/
+// Task: TSQRL - Pierwiastki równania kwadratowego (SPOJ)
+// URL: https://pl.spoj.com/problems/TSQRL/
 // Author: Marcin Wojdat
 // Date: 24.01.2021
 // Algorithms from: https://github.com/Rubix98/algorithms
