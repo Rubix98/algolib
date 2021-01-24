@@ -33,7 +33,7 @@ typedef vector<PI>   VPI;
 #define ALL(v)       v.begin(), v.end()
 // Pętle
 #define LOOP(i, a, b)  for (int i = (a); i < (int)(b); ++i)
-#define FOREACH(x, v)  for (auto &x: v)
+#define FOREACH(x, v)  for (auto x: v)
 #define REP(i, n)      LOOP(i, 0, n)
 // Stałe
 const int INF = 1e9+9;
@@ -51,7 +51,7 @@ const double EPS = 1e-9;
 #define MOD(a, m) (a % m + m) % m
 #define TEMPL template <typename T>
 #define NP nullptr
-#define BETWEEN(x, a, b) (a) <= x && x <= (b) || (b) <= x && x <= (a)
+#define BETWEEN(x, a, b) (((a) <= x && x <= (b)) || ((b) <= x && x <= (a)))
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -100,7 +100,7 @@ TEMPL void readTab(VT &v) {
     int n;
     cin >> n;
     v.resize(n);
-    FOREACH(x, v) cin >> x;
+    REP(i, n) cin >> v[i];
 }
 
 // Debugowanie
@@ -124,7 +124,7 @@ ULL gcd(LL a, LL b) {
 ULL lcm(int a, int b) {
     a = abs(a);
     b = abs(b);
-    return (a || b) ? (ULL) a * b / gcd(a, b) : 0;
+    return (a || b) ? (ULL) a / gcd(a, b) * b : 0;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -154,7 +154,7 @@ UI powMod(LL a, ULL b, UI m) {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-UI newton(int n, int k, UI p) {
+UI newton(int n, int k, UI p = INF) {
     if (n < 0 || k < 0 || n < k) return 0;
     ULL res = 1;
     LOOP(i, 0, min(k, n-k)) {
@@ -163,6 +163,7 @@ UI newton(int n, int k, UI p) {
     }
     return res;
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -317,13 +318,15 @@ TEMPL struct Graph {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEMPL void readGraph(GT &g, bool isD, bool isW) {
+TEMPL void readGraph(GT &g, bool isD, bool isW, int id = 0) {
     int n, m, a, b;
-    T w;
+    T w = 1;
     cin >> n >> m;
     g = GT(n);
     REP(i, m) {
         cin >> a >> b;
+        a -= id;
+        b -= id;
         if (isW) cin >> w;
         if (isD) g.addEdgeD(a, b, w);
         else g.addEdge(a, b, w);
@@ -345,7 +348,9 @@ TEMPL void makeGraph(GT &g, VE E, bool isD, bool isW) {
 
 TEMPL T sumEdges(VE &E) {
     T res = 0;
-    FOREACH(e, E) res += e->w;
+    FOREACH(e, E)
+        if (e != NP)
+            res += e->w;
     return res;
 }
 
@@ -739,7 +744,7 @@ struct Circle {
         *this = Circle(s, s.dist(p));
     }
     
-    double field() {
+    double area() {
         return M_PI * r * r;
     }
     
@@ -777,7 +782,7 @@ struct Polygon {
         }
     }
     
-    double field() {
+    double area() {
         double res = 0;
         REP(i, n-2) {
             Vector v1 = Vector(P[n-1], P[i]);
