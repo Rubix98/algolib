@@ -1,6 +1,5 @@
 // Task: PP0501A - NWD (SPOJ)
 // URL: https://pl.spoj.com/problems/PP0501A/
-// Tags: [GCD]
 // Author: Marcin Wojdat
 // Date: 23.01.2021
 // Algorithms from: https://github.com/Rubix98/algorithms

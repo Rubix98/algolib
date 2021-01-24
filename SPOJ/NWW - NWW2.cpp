@@ -1,6 +1,5 @@
 // Task: NWW - NWW2 (SPOJ)
 // URL: https://pl.spoj.com/problems/NWW/
-// Tags: [LCM], [GCD]
 // Author: Marcin Wojdat
 // Date: 23.01.2021
 // Algorithms from: https://github.com/Rubix98/algorithms

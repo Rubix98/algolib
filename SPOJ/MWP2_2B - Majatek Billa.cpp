@@ -1,6 +1,5 @@
 // Task: MWP2_2B - Majątek Billa (SPOJ)
 // URL: https://pl.spoj.com/problems/MWP2_2B/
-// Tags: [powMod]
 // Author: Marcin Wojdat
 // Date: 23.01.2021
 // Algorithms from: https://github.com/Rubix98/algorithms

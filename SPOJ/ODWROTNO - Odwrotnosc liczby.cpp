@@ -1,6 +1,5 @@
 // Task: ODWROTNO - Odwrotność liczby (SPOJ)
 // URL: https://pl.spoj.com/problems/ODWROTNO/
-// Tags: [invMod]
 // Author: Marcin Wojdat
 // Date: 23.01.2021
 // Algorithms from: https://github.com/Rubix98/algorithms
